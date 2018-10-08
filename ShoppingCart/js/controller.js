@@ -9,7 +9,7 @@ function storeController($scope, $routeParams, DataService) {
     // get store and cart from service
     $scope.store = DataService.store;
     $scope.cart = DataService.cart;
-
+    $scope.username = "aamir";
     // apply changes when cart items change
     $scope.cart.itemsChanged = function (e) {
         if (!$scope.$$phase) {
@@ -29,4 +29,6 @@ function productController($scope, $routeParams, DataService) {
    {
         $scope.selectedCommodityList = $scope.store.getProductList($routeParams.productName);
    }
+
+
 }

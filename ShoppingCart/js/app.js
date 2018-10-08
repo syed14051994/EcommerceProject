@@ -12,6 +12,10 @@ var storeApp = angular.module('AngularStore', []).
          templateUrl: 'partials/store.htm',
          controller: productController
        }).
+       when('/location', {
+       templateUrl: 'partials/product2.htm',
+       controller: productController
+       }).
       when('/products/:productSku', {
         templateUrl: 'partials/product.htm',
         controller: storeController
@@ -64,3 +68,11 @@ storeApp.factory("DataService", function () {
         cart: myCart
     };
 });
+
+storeApp.filter('CaseFilter', function(){
+    return function(item)
+    {
+        return item.toUpperCase();
+    };
+});
+
